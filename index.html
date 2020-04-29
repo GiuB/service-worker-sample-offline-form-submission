@@ -15,6 +15,7 @@
       </form>
       <br><br>
       <h3>A dummy demo by: <a href="http://giub.it">giub.it</a></h3>
+      <p>👨🏻‍💻 Source available <a href="https://github.com/GiuB/service-worker-sample-offline-form-submission/settings">here</a></p>
       <h3>How it works:</h3>
       <div style="max-width: 550px; text-align: left;">
         <ol>
@@ -26,7 +27,7 @@
           </li>
           <li>
             Every 3 seconds we scheduled an event that check if there are new formData stored under indexedDB.form1,
-            if so, push them to the server (fake), and clear indexedDB
+            if so, push them to the server (with a fake console.log 🙃), and clear indexedDB
             Note: check sw.js -> formDataIndexed.pushToServer()
           </li>
           <li>
