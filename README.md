@@ -1,4 +1,8 @@
-## Service worker sample offline form
+## Service worker sample offline form submission
+
+## Online demo available here:
+
+https://giub.github.io/service-worker-sample-offline-form-submission/
 
 A dummy demo by: giub.it
 
