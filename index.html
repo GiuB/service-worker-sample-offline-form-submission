@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sample service-worker form</title>
+  <meta name="theme-color" content="white"/>
+  <link rel="stylesheet" href="static/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body class="fullscreen">
+    <div class="container">
+      <form id="test-form">
+        <h1>Service worker sample offline form</h1>
+        <input type="text" id="test-input" name="test-input" required>
+        <input type="submit" value="Submit" />
+      </form>
+      <br><br>
+      <h3>A dummy demo by: <a href="http://giub.it">giub.it</a></h3>
+      <h3>How it works:</h3>
+      <div style="max-width: 550px; text-align: left;">
+        <ol>
+          <li>
+            After form submission, data are stored in indexedDB<br>
+            check Chrome -> Application -> IndexedDB.form1.<br>
+            Check the code save method under main.js -> storeData()<br>
+            Note: we used indexedDB cause localStorage does not work with service-worker
+          </li>
+          <li>
+            Every 3 seconds we scheduled an event that check if there are new formData stored under indexedDB.form1,
+            if so, push them to the server (fake), and clear indexedDB
+            Note: check sw.js -> formDataIndexed.pushToServer()
+          </li>
+          <li>
+            Note: If u have problems try to "Unregister" the service worker or check "Update on reload"<br>
+            Note: If you want to test locally create your self-signed certificate and run this command:<br>
+            <span style="font-family: monospace; background: black; color: green">
+            /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/foo --ignore-certificate-errors --unsafely-treat-insecure-origin-as-secure=https://sw.local
+            </span>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
