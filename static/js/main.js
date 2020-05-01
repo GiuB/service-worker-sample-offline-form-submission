@@ -81,7 +81,7 @@ class OfflineForm {
     if (!indexedDB)
       return false; // silently exit if indexedDB is not available.
     
-    const formDB = indexedDB.open('FORM_DATA', 1);
+    const formDB = indexedDB.open('FORM_DATA', 2);
 
     formDB.onsuccess = function(event) {   
       const transaction = formDB.result.transaction('form1', 'readwrite');

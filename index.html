@@ -26,7 +26,7 @@
             Note: we used indexedDB cause localStorage does not work with service-worker
           </li>
           <li>
-            Every 3 seconds we scheduled an event that check if there are new formData stored under indexedDB.form1,
+            Every 6 seconds we scheduled an event that check if there are new formData stored under indexedDB.form1,
             if so, push them to the server (with a fake console.log 🙃), and clear indexedDB
             Note: check sw.js -> formDataIndexed.pushToServer()
           </li>

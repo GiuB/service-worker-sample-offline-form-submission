@@ -46,8 +46,8 @@ class formDataIndexed {
   }
 
   init = () => {
-    // Create db (if needed) with version 1
-    this.formDB = self.indexedDB.open('FORM_DATA', 1);    
+    // Create db (if needed) with version 2
+    this.formDB = self.indexedDB.open('FORM_DATA', 2);    
 
     // add debugging success handler
     this.formDB.onsuccess = (event) => {
