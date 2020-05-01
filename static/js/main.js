@@ -83,9 +83,8 @@ class OfflineForm {
     
     const formDB = indexedDB.open('FORM_DATA', 1);
 
-    formDB.onsuccess = function(event) {
-      const db = event.target.result;      
-      const transaction = db.transaction('form1', 'readwrite');
+    formDB.onsuccess = function(event) {   
+      const transaction = formDB.result.transaction('form1', 'readwrite');
       const form1ObjectStore = transaction.objectStore('form1');
       form1ObjectStore.add(formData, uuid());
     }

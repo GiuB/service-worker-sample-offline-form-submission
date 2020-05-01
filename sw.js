@@ -1,4 +1,4 @@
-var cacheName = 'hello-pwa-v02';
+var cacheName = 'hello-pwa-v02a';
 var filesToCache = [
   './',
   './index.html',
@@ -101,5 +101,5 @@ self.addEventListener('activate', event => {
 
   setInterval(function () {
     formDataIndexedDB.pushToServer();
-  }, 3000);
+  }, 6000);
 });
